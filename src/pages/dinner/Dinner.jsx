@@ -1,0 +1,30 @@
+import React from 'react'
+import { foods } from './data';
+import { useState } from 'react';
+const Dinner = () => {
+    const [data,setData]= useState(foods);
+  return (
+    < div className='bg-gray'>
+      {data.map((section) => (
+        <div key={section.id}>
+          <h1 className='flex text-white justify-center uppercase font-bold font-jost text-3xl py-8 mx-0'>{section.title}</h1>
+
+          {section.items.map((food) => (
+            <div key={food.id} className='flex justify-center my-2 px-4 md:px-8 w-full'>
+              <a href="#" className="flex items-center justify-center bg-secondary rounded-lg shadow flex-row max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img className="object-cover h-[150px] w-[150px] rounded-2xl md:h-[198px] md:w-[210px] p-1 md:px-3 md:py-2" src={food.imageSrc} alt="" />
+                <div className="flex flex-col justify-between pr-[30px] py-4 leading-normal">
+                  <h1 className="md:mb-2 text-lg md:text-3xl font-bold tracking-tight text-black font-jost">{food.name}</h1>
+                  <p className="mb-3 font-medium text-xs md:text-sm text-black font-poppins">{food.description}</p>
+                  <p className='flex justify-end text-lg md:text-2xl text-primary font-semibold font-poppins'>${food.price.toFixed(2)}</p>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default Dinner

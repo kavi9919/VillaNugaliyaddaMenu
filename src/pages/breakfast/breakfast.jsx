@@ -6,7 +6,7 @@ const Breakfast = () => {
   const [data,setData]= useState(foods);
   
   return (
-    <div className='bg-secondary'>
+    <div className='bg-secondary pb-8'>
       {data.map((section) => (
         <div key={section.id}>
           <h1 className='flex justify-center uppercase font-bold font-jost text-3xl py-8 mx-0'>{section.title}</h1>

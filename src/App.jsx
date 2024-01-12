@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage'
 import MenuPage from './pages/MenuPage'
 import Breakfast from './pages/breakfast/breakfast'
 import Lunch from './pages/lunch/Lunch'
+import Dinner from './pages/dinner/Dinner'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
          <Route path='menu' element={<MenuPage/>}/>
          <Route path='breakfast' element={<Breakfast/>}></Route>
          <Route path='lunch' element={<Lunch/>}/>
+         <Route path='dinner' element={<Dinner/>}/>
          </Routes>
     </>
   )
