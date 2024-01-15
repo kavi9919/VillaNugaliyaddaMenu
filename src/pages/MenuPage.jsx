@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 const MenuPage = () => {
   return (
    <div className='bg-secondary'>
-    <div className='h-screen'>
+    <div>
         <div className='flex justify-center px-12 pt-8 '> 
             <img src={logoblack} alt="" />
         </div>   
