@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
 import { useNavigate,} from 'react-router-dom'
+import { motion } from "framer-motion"
 const Hero = () => {
     const navigate=useNavigate();
   return (
@@ -11,9 +12,17 @@ const Hero = () => {
                 <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.65)]">
                     <div className="flex h-full items-center justify-center">
                     <div className="px-6 text-center text-white md:px-12">
-                        <div className='mt-6 mb-16 mx-4 md:mx-16 px-8'>
+                        <motion.div className='mt-6 mb-16 mx-4 md:max-w-lg px-8'
+                            variants={{
+                                hidden:{opacity:0, y:75},
+                                visible:{opacity:1, y:1}
+                            }}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{duration:0.5 , delay:0.5}}
+                        >
                             <img src={logo} alt="" />
-                        </div>
+                        </motion.div>
                         
                     </div>
                     </div>
@@ -30,10 +39,16 @@ const Hero = () => {
                     <h1>Harmony of Nature's Bounty: Where Freshness Meets Serenity in Every Bite</h1>
                 </div>
                 <div className='flex  justify-center sm:my-2 mt-12'>
-                    <button class="bg-yelloClr font-jost px-12 rounded-full text-black font-bold py-3 sm:text-xl" 
+                    <motion.button class="bg-yelloClr font-jost px-12 rounded-full text-black font-bold py-3 sm:text-xl" 
                     onClick={()=>navigate('menu')}
+                    whileHover={{
+                        scale: 1.2,
+                        transition: { duration: 1 },
+                      }}
+                      whileTap={{ scale: 0.9 }}
                     >
-                     Food Menu</button>
+                     Food Menu
+                     </motion.button>
                 </div>
                 {/* Background image */}
                 </div>
